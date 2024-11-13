@@ -137,7 +137,7 @@ python scripts/train/run_model.py --config_file configs/Model_training/pdbbind/i
 - Testing model:
 
 ```
-python scripts/eval/eval_model.py --exp_name run-20240516_224208-z1bjc3ku   
+python scripts/eval/eval_model.py --exp_name xxx
 ```
 
 **exp_name** Change to the name of the model training result folder in `/Experiments/...`
