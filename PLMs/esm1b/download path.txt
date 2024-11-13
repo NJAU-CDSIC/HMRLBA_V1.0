@@ -1,0 +1,1 @@
+https://huggingface.co/facebook/esm1b_t33_650M_UR50S/tree/main
