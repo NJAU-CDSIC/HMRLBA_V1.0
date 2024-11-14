@@ -14,7 +14,7 @@ The folders in the HMRLBA repository:
 
 - **PLMs**: Storage for three different PLMs.
 
-- **scripts**: Scripts for data preprocessing, graph generation, model training, and testing**.**
+- **scripts**: Scripts for data preprocessing, graph generation, model training, and testing.
 
 - **Experiments:** Model training result save file.
 
@@ -75,9 +75,8 @@ export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
 
 Download the dataset and unzip it to the corresponding folder:
 
-- ​		/Datasets/Raw_data:  https://figshare.com/articles/dataset/HMRLBA-dataset-pdbbind_tar_gz/27644664?file=50343855 
+- ​		/Datasets/Raw_data:  https://figshare.com/articles/dataset/HMRLBA-dataset-pdbbind_tar_gz/27644664?file=50343855  or  https://zenodo.org/records/14061991
 
-  ​											  or  https://zenodo.org/records/14061991
 
 Download PLMs to the corresponding folder:
 
