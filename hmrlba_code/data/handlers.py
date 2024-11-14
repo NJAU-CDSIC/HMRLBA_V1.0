@@ -82,8 +82,8 @@ class DataHandler:
             raise Exception("PDB file could not be processed within given time.")
 
         # 获取模型路径
-        # plm_dir = os.path.join(os.environ['PROT'], "PLMs")
-        plm_dir = "/mnt/disk/hzy/pyg/plms"
+        plm_dir = os.path.join(os.environ['PROT'], "PLMs")
+        # plm_dir = "/mnt/disk/hzy/pyg/plms"
         model_checkpoint = os.path.join(plm_dir, self.plm)
 
         # 根据模型类型加载相应的模型和tokenizer
