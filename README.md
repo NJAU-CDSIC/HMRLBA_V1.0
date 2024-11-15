@@ -1,6 +1,6 @@
 # **HMRLBA** Code Repository
 
-This is the code repository of **HMRLBA**, it is a novel hierarchical protein multi-scale representation learning model for protein-ligand binding affinity prediction.
+This is a repository to deposit the code and data for **HMRLBA** model. **HMRLBA** is a hierarchical multi-scale representation learning model for predicting protein-ligand binding affinity.
 
 ---
 
@@ -8,30 +8,36 @@ The folders in the HMRLBA repository:
 
 - **configs**: Parameters for data preprocessing and model training.
 
-- **Datasets**: Dataset used (PDBbind) and the three split configurations; Hard samples; Drugs used in virtual screening. (see **3. Dataset and PLMs Download**)
+- **Datasets**: 
+
+  1. Three dataset splits from PDBbind v2019.
+
+  2. 21 hard samples.
+
+  3. SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors.
 
 - **hmrlba_code**: Main code file for the HMRLBA model.
 
-- **PLMs**: Storage for three different PLMs.
+- **PLMs**: Three protein language models - ESM-1b, Ankh, ProtTrans.
 
-- **scripts**: Scripts for data preprocessing, graph generation, model training, and testing.
+- **scripts**: Scripts for data preprocessing, graph generation, model training and testing.
 
 - **Experiments:** Model training result save file.
 
 - **SOTA**: Comparative methods used in the contrast experiments:
 
   ​	DeepDTA: https://github.com/hkmztrk/DeepDTA
-  
+
   ​	MGraphDTA: https://github.com/guaguabujianle/MGraphDTA
-  
+
   ​	IEConv: https://github.com/phermosilla/IEConv_proteins
-  
+
   ​	PSICHIC: https://github.com/huankoh/PSICHIC
-  
+
   ​	HoloProt: https://github.com/vsomnath/holoprot
-  
+
   ​	MaSIF: https://github.com/LPDI-EPFL/masif
-  
+
   ​	HaPPy: https://github.com/Jthy-af/HaPPy
 
 ---
@@ -40,7 +46,7 @@ The folders in the HMRLBA repository:
 
 ### **Step-by-step Running:**
 
-## 1. Environment Install
+## 1. Environment Installation
 
 It is recommended to use the conda environment (python 3.7), mainly installing the following dependencies:
 
@@ -71,14 +77,17 @@ export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
 
 
 
-## 3. Dataset and PLMs Download
+## 3. Datasets
 
-Download the dataset and unzip it to the corresponding folder:
+Download the datasets from the following links:
 
-- ​		/Datasets/Raw_data:  https://figshare.com/articles/dataset/HMRLBA-dataset-pdbbind_tar_gz/27644664?file=50343855  or  https://zenodo.org/records/14061991
+- ​		/Datasets/Raw_data:  https://doi.org/10.6084/m9.figshare.27644664.v1  or  https://zenodo.org/records/1406199
 
 
-Download PLMs to the corresponding folder:
+
+## 4. PLMs
+
+Download the protein language models from the following links:
 
 - ​		/PLMs /ankh:  https://huggingface.co/ElnaggarLab/ankh-large/tree/main
 - ​		/PLMs /esm1b:  https://huggingface.co/facebook/esm1b_t33_650M_UR50S/tree/main
@@ -86,7 +95,7 @@ Download PLMs to the corresponding folder:
 
 
 
-## 4. Data Preprocessing
+## 5. Data Preprocessing
 
 Calculate protein secondary structure (dssp), and generate protein surface mesh, for subsequent **graph** **generation**.
 
@@ -98,9 +107,9 @@ The generated files are stored in the original dataset path：`./Datasets/Raw_da
 
 
 
-## 5.  Graph Generation
+## 6.  Graph Generation
 
-Construct graphs using three different PLMs
+Graph reprensentation for protein-ligand pairs.
 
 ```
 python -W ignore scripts/preprocess/prepare_graphs.py --dataset pdbbind --prot_mode surface2backbone --plm esm1b
@@ -112,7 +121,7 @@ The graph data is stored in： `./Datasets/processed/pdbbind/surface2backbone/..
 
 
 
-## 6.  Training and Testing
+## 7.  Training and Testing
 
 We use wandb to track out experiments. Please make sure to have the [setup](https://docs.wandb.ai/quickstart) complete before doing that.
 
