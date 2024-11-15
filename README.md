@@ -10,11 +10,11 @@ The folders in the HMRLBA repository:
 
 - **Datasets**: 
 
-  1. Three dataset splits from PDBbind v2019.
+  a. Three dataset splits from PDBbind v2019.
 
-  2. 21 hard samples.
+  b. 21 hard samples.
 
-  3. SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors.
+  c. SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors.
 
 - **hmrlba_code**: Main code file for the HMRLBA model.
 
