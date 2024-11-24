@@ -1,0 +1,35 @@
+2024-04-15 20:46:06,562 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Current SDK version is 0.15.4
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Configure stats pid to 3563375
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Loading settings from /home/ubuntu/.config/wandb/settings
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Loading settings from /mnt/disk/hzy/pyg/myprot_PEA_new/wandb/settings
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train/run_model.py', 'program': 'scripts/train/run_model.py'}
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_init.py:_log_setup():507] Logging user logs to /mnt/disk/hzy/pyg/holoprot/experiments/wandb/run-20240415_204606-r94ymd7y/logs/debug.log
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_init.py:_log_setup():508] Logging internal logs to /mnt/disk/hzy/pyg/holoprot/experiments/wandb/run-20240415_204606-r94ymd7y/logs/debug-internal.log
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_init.py:init():547] calling init triggers
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_init.py:init():555] wandb.init called with sweep_config: {}
+config: {'split': 'identity30', 'dataset': 'pdbbind', 'prot_mode': 'surface2backbone', 'encoder': 'wlnatt', 'hsize': 512, 'bhsize': 200, 'shsize': 150, 'bdepth': 5, 'sdepth': 6, 'lig_hsize': 300, 'lig_depth': 4, 'dropout_mlp': 0.3, 'dropout_mpn': 0.15, 'lr': 0.001, 'clip_norm': 10.0, 'weight_decay': 0.001, 'epochs': 200, 'num_workers': 6, 'batch_size': 1, 'step_after': 50, 'scheduler_type': 'plateau', 'accum_every': 32, 'metric_thresh': 0.01, 'patience': 5, 'anneal_rate': 0.9, 'use_doubles': False, 'use_concat': False, 'use_grad_noise': True, 'use_attn': False, 'print_every': 500, 'eval_every': 1900, 'ligand_only': False, 'use_mpn_in_patch': False}
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_init.py:init():596] starting backend
+2024-04-15 20:46:06,563 INFO    MainThread:3563375 [wandb_init.py:init():600] setting up manager
+2024-04-15 20:46:06,565 INFO    MainThread:3563375 [backend.py:_multiprocessing_setup():108] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-04-15 20:46:06,626 INFO    MainThread:3563375 [wandb_init.py:init():606] backend started and connected
+2024-04-15 20:46:06,642 INFO    MainThread:3563375 [wandb_init.py:init():703] updated telemetry
+2024-04-15 20:46:06,642 INFO    MainThread:3563375 [wandb_init.py:init():736] communicating run to backend with 60.0 second timeout
+2024-04-15 20:46:07,527 INFO    MainThread:3563375 [wandb_run.py:_on_init():2176] communicating current version
+2024-04-15 20:46:07,853 INFO    MainThread:3563375 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.16.6 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-04-15 20:46:07,854 INFO    MainThread:3563375 [wandb_init.py:init():787] starting run threads in backend
+2024-04-15 20:46:20,516 INFO    MainThread:3563375 [wandb_run.py:_console_start():2155] atexit reg
+2024-04-15 20:46:20,516 INFO    MainThread:3563375 [wandb_run.py:_redirect():2010] redirect: SettingsConsole.WRAP_RAW
+2024-04-15 20:46:20,517 INFO    MainThread:3563375 [wandb_run.py:_redirect():2075] Wrapping output streams.
+2024-04-15 20:46:20,517 INFO    MainThread:3563375 [wandb_run.py:_redirect():2100] Redirects installed.
+2024-04-15 20:46:20,517 INFO    MainThread:3563375 [wandb_init.py:init():828] run started, returning control to user process
+2024-04-15 20:46:20,517 INFO    MainThread:3563375 [wandb_config.py:__setitem__():152] config set data_dir = ../datasets - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f5ecfa6e4d0>>
+2024-04-15 20:46:20,517 INFO    MainThread:3563375 [wandb_run.py:_config_callback():1283] config_cb data_dir ../datasets None
+2024-04-15 20:46:20,518 INFO    MainThread:3563375 [wandb_config.py:__setitem__():152] config set out_dir = /mnt/disk/hzy/pyg/holoprot/experiments - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f5ecfa6e4d0>>
+2024-04-15 20:46:20,518 INFO    MainThread:3563375 [wandb_run.py:_config_callback():1283] config_cb out_dir /mnt/disk/hzy/pyg/holoprot/experiments None
+2024-04-15 20:46:20,518 INFO    MainThread:3563375 [wandb_config.py:__setitem__():152] config set config_file = configs/train/pdbbind/identity30.yaml - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f5ecfa6e4d0>>
+2024-04-15 20:46:20,518 INFO    MainThread:3563375 [wandb_run.py:_config_callback():1283] config_cb config_file configs/train/pdbbind/identity30.yaml None
+2024-04-15 20:46:20,519 INFO    MainThread:3563375 [wandb_config.py:__setitem__():152] config set sweep = False - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f5ecfa6e4d0>>
+2024-04-15 20:46:20,519 INFO    MainThread:3563375 [wandb_run.py:_config_callback():1283] config_cb sweep False None

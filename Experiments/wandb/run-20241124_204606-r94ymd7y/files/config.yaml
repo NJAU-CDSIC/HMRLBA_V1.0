@@ -1,0 +1,143 @@
+wandb_version: 1
+
+split:
+  desc: null
+  value: identity30
+dataset:
+  desc: null
+  value: pdbbind
+prot_mode:
+  desc: null
+  value: surface2backbone
+encoder:
+  desc: null
+  value: wlnatt
+hsize:
+  desc: null
+  value: 512
+bhsize:
+  desc: null
+  value: 200
+shsize:
+  desc: null
+  value: 150
+bdepth:
+  desc: null
+  value: 5
+sdepth:
+  desc: null
+  value: 6
+lig_hsize:
+  desc: null
+  value: 300
+lig_depth:
+  desc: null
+  value: 4
+dropout_mlp:
+  desc: null
+  value: 0.3
+dropout_mpn:
+  desc: null
+  value: 0.15
+lr:
+  desc: null
+  value: 0.001
+clip_norm:
+  desc: null
+  value: 10.0
+weight_decay:
+  desc: null
+  value: 0.001
+epochs:
+  desc: null
+  value: 200
+num_workers:
+  desc: null
+  value: 6
+batch_size:
+  desc: null
+  value: 1
+step_after:
+  desc: null
+  value: 50
+scheduler_type:
+  desc: null
+  value: plateau
+accum_every:
+  desc: null
+  value: 32
+metric_thresh:
+  desc: null
+  value: 0.01
+patience:
+  desc: null
+  value: 5
+anneal_rate:
+  desc: null
+  value: 0.9
+use_doubles:
+  desc: null
+  value: false
+use_concat:
+  desc: null
+  value: false
+use_grad_noise:
+  desc: null
+  value: true
+use_attn:
+  desc: null
+  value: false
+print_every:
+  desc: null
+  value: 500
+eval_every:
+  desc: null
+  value: 1900
+ligand_only:
+  desc: null
+  value: false
+use_mpn_in_patch:
+  desc: null
+  value: false
+_wandb:
+  desc: null
+  value:
+    python_version: 3.7.13
+    cli_version: 0.15.4
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1713185166.626637
+    t:
+      1:
+      - 1
+      - 5
+      - 53
+      - 55
+      - 77
+      2:
+      - 1
+      - 5
+      - 53
+      - 55
+      - 77
+      3:
+      - 16
+      - 19
+      - 23
+      4: 3.7.13
+      5: 0.15.4
+      8:
+      - 5
+data_dir:
+  desc: null
+  value: ../datasets
+out_dir:
+  desc: null
+  value: /mnt/disk/hzy/pyg/holoprot/experiments
+config_file:
+  desc: null
+  value: configs/train/pdbbind/identity30.yaml
+sweep:
+  desc: null
+  value: false

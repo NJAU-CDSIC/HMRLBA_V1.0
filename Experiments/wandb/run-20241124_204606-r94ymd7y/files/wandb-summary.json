@@ -1,0 +1,1 @@
+{"iteration": 192886, "train_loss": 0.1268, "_timestamp": 1713239134.2580898, "_runtime": 53967.63145279884, "_step": 550, "valid_rmse": 1.8582, "valid_pearsonr": 0.4567, "valid_mae": 1.4665, "valid_r2": 0.1402, "valid_spearmanr": 0.4651, "valid_loss": 3.4528}

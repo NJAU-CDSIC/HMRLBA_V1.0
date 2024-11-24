@@ -147,10 +147,12 @@ python scripts/train/run_model.py --config_file configs/Model_training/pdbbind/i
 - Testing model:
 
 ```
-python scripts/eval/eval_model.py --exp_name xxx
+python scripts/eval/eval_model.py --exp_name run-20241124_204606-r94ymd7y
 ```
 
-**exp_name** Change to the name of the model training result folder in `/Experiments/...`
+The exp_name **run-20241124_204606-r94ymd7y** is a model that has been trained on identity30 dataset.
+
+If you want to test your trained model, change exp_name to the name of the model training result folder in `/Experiments/wandb/...`
 
 
 
