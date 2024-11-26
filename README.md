@@ -52,7 +52,7 @@ The folders in the HMRLBA repository:
 
 It is recommended to use the conda environment (python 3.7), mainly installing the following dependencies:
 
-- [ ] ​		**pytorch (1.9.0)、torch-geometric (2.0.4)、dgl-cu111 (0.6.1)、cudatoolkit (11.1.74)**
+- [ ] ​		**pytorch (1.9.0)、torch-geometric (1.7.1)、dgl-cu111 (0.6.1)、cudatoolkit (11.1.74)**
 
 - [ ] ​		**[msms](http://mgltools.scripps.edu/packages/MSMS/) (2.6.1)、[dssp](https://swift.cmbi.umcn.nl/gv/dssp/) (3.0.0)、[blender](https://www.blender.org/) (3.5.1)、pdb2pqr (2.1.1) 、biopython (1.79)、rdkit (2023.3.1)、transformers (4.24.0)、**
 
