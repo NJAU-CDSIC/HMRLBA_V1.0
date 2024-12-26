@@ -68,10 +68,10 @@ See environment.yaml for details.
 You need to change these environment variables according to your installation path.
 
 ```
-export PROT=/mnt/disk/hzy/HMRLBA (project root)
-export DSSP_BIN=dssp
-export MSMS_BIN=/home/ubuntu/anaconda3/envs/pyg/bin/msms
-export BLENDER_BIN=/home/ubuntu/anaconda3/envs/pyg/lib/python3.7/site-packages/blender-3.5.1-linux-x64/blender
+export PROT="/mnt/disk/hzy/HMRLBA" (project root)
+export DSSP_BIN="dssp"
+export MSMS_BIN="/home/ubuntu/anaconda3/envs/pyg/bin/msms"
+export BLENDER_BIN="/home/ubuntu/anaconda3/envs/pyg/lib/python3.7/site-packages/blender-3.5.1-linux-x64/blender"
 export PATH="/home/ubuntu/anaconda3/bin:$PATH"
 export PATH="/home/ubuntu/anaconda3/envs/pyg/lib/python3.7/site-packages/blender-3.5.1-linux-x64:$PATH"
 export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
