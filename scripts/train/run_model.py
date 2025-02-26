@@ -48,6 +48,8 @@ def run_model(config):
 
     dataset_class = DATASETS.get(config['dataset'])
     kwargs = {'split': config['split']}
+    if config['dataset'] in ['scope', 'enzyme']:
+        kwargs['add_target'] = True
 
     raw_dir = os.path.abspath(f"{config['data_dir']}/Raw_data/{config['dataset']}")
 
@@ -55,7 +57,7 @@ def run_model(config):
 
     train_dataset = dataset_class(mode='train', raw_dir=raw_dir,
                                   processed_dir=processed_dir,
-                                  prot_mode=config['prot_mode'], **kwargs)
+                                  prot_mode=config['prot_mode'], dataset=config['dataset'], **kwargs)
 
     train_data = train_dataset.create_loader(batch_size=config['batch_size'], num_workers=config['num_workers'],
                                              shuffle=True)
@@ -64,7 +66,7 @@ def run_model(config):
     if config['eval_every'] is not None:
         eval_dataset = dataset_class(mode='valid', raw_dir=raw_dir,
                                      processed_dir=processed_dir,
-                                     prot_mode=config['prot_mode'], **kwargs)
+                                     prot_mode=config['prot_mode'], dataset=config['dataset'], **kwargs)
         eval_data = eval_dataset.create_loader(batch_size=1,
                                                num_workers=config['num_workers'])
 

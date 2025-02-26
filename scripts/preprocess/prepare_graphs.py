@@ -4,9 +4,9 @@ import torch
 
 torch.multiprocessing.set_sharing_strategy('file_system')
 
-from hmrlba_code.data.handlers import PDBBind
+from hmrlba_code.data.handlers import PDBBind, Enzyme
 
-HANDLERS = {'pdbbind': PDBBind}
+HANDLERS = {'pdbbind': PDBBind, 'enzyme': Enzyme}
 DATA_DIR = os.path.join(os.environ['PROT'], "Datasets")
 
 

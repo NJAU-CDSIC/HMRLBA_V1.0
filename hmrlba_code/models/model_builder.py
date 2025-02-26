@@ -7,10 +7,12 @@ from hmrlba_code.models.affinity_pred import AffinityPred
 from hmrlba_code.feat import (AMINO_ACIDS, SECONDARY_STRUCTS, ATOM_FDIM,
                               BOND_FDIM, CONTACT_FDIM, SURFACE_NODE_FDIM, SURFACE_EDGE_FDIM,
                               PATCH_NODE_FDIM, PATCH_EDGE_FDIM)
+from hmrlba_code.models.prot_classifier import ProtClassifier
 from hmrlba_code.utils.metrics import EVAL_METRICS, DATASET_METRICS, METRICS
 
 MODEL_CLASSES = {
     'pdbbind': AffinityPred,
+    'enzyme': ProtClassifier
 }
 
 
@@ -91,9 +93,60 @@ def affinity_pred_config(loaded_config):
     return model_config
 
 
+def prot_class_config(loaded_config):
+    model_config = {}
+    config = {}
+    toggles = {}
+
+    mpn_config = build_mpn_config(loaded_config)
+    config['mpn_config'] = mpn_config
+    config['n_classes'] = loaded_config['n_classes']
+    if isinstance(loaded_config['hsize'], int):
+        config['hsize'] = [loaded_config['hsize']]
+    else:
+        config['hsize'] = loaded_config['hsize']
+    config['encoder'] = loaded_config['encoder']
+    config['dropout_mlp'] = loaded_config['dropout_mlp']
+    config['prot_mode'] = loaded_config['prot_mode']
+    config['activation'] = loaded_config.get("activation", "relu")
+    config['jk_pool'] = loaded_config.get("jk_pool", None)
+
+    toggles['use_attn'] = loaded_config.get('use_attn', False)
+    toggles['use_mpn_in_patch'] = loaded_config.get('use_mpn_in_patch', False)
+
+    if config['prot_mode'] in ['backbone', 'surface']:
+        toggles['use_attn'] = False
+    model_config['config'] = config
+    model_config['toggles'] = toggles
+    return model_config
+
+
 CONFIG_FNS = {
     'pdbbind': affinity_pred_config,
+    'enzyme': prot_class_config
 }
+
+
+def compute_function_weights(config):
+    raw_dir = f"{config['data_dir']}/raw/enzyme/metadata"
+    labels_to_idx_file = f"{raw_dir}/labels_to_idx.json"
+    labels_file = f"{raw_dir}/function_labels.json"
+    with open(labels_to_idx_file, "r") as f:
+        labels_to_idx = json.load(f)
+
+    with open(labels_file, "r") as f:
+        function_labels = json.load(f)
+
+    weights = np.full((len(labels_to_idx)), 0, dtype=np.int32)
+    for pdb_id in function_labels:
+        weights[labels_to_idx[function_labels[pdb_id]]] += 1
+    weights = weights.astype(np.float32) / (float(len(function_labels)) * 0.5)
+
+    print("Min occurence: ", np.amin(weights))
+    print("Max occurence: ", np.amax(weights))
+
+    weights_log = 1.0 / np.log(1.2 + weights)
+    return weights_log
 
 
 def build_model(loaded_config, device='cpu'):
@@ -106,6 +159,10 @@ def build_model(loaded_config, device='cpu'):
     metrics = {}
     for metric in dataset_metrics:
         metrics[metric], _, _ = METRICS.get(metric)
+
+    if loaded_config['dataset'] == 'enzyme':
+        weights = compute_function_weights(loaded_config)
+        model_config['class_weights'] = weights
 
     model_config['metrics'] = metrics
     model_class = MODEL_CLASSES.get(loaded_config['dataset'])

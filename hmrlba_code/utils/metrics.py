@@ -41,6 +41,8 @@ METRICS = {'accuracy': (accuracy_fn, 0.0, np.greater),
            'r2': (r2_fn, 0.0, np.greater),
            'spearmanr': (spearmanr_fn, 0.0, np.greater)}
 
-DATASET_METRICS = {'pdbbind': ['rmse', 'pearsonr', 'mae', 'r2', 'spearmanr'], }
+DATASET_METRICS = {'pdbbind': ['rmse', 'pearsonr', 'mae', 'r2', 'spearmanr'],
+                   'enzyme': 'accuracy'}
 
-EVAL_METRICS = {'pdbbind': {'surface2backbone': 'rmse', }, }
+EVAL_METRICS = {'pdbbind': {'surface2backbone': 'rmse'},
+                'enzyme': {'surface2backbone': 'accuracy'}}

@@ -31,6 +31,7 @@ class BaseDataset(Dataset):
                  raw_dir: str = None,
                  prot_mode: str = None,
                  processed_dir: str = None,
+                 dataset: str = None,
                  **kwargs):
         """
         Parameters
@@ -47,9 +48,10 @@ class BaseDataset(Dataset):
         self.mode = mode
         self.raw_dir = raw_dir
         self.prot_mode = prot_mode
-        self.data_dir = f"{processed_dir}/processed/pdbbind/{self.prot_mode}/ankh"
-        self.data_dir2 = f"{processed_dir}/processed/pdbbind/{self.prot_mode}/esm1b"
-        self.data_dir3 = f"{processed_dir}/processed/pdbbind/{self.prot_mode}/prottrans"
+        self.dataset = dataset
+        self.data_dir = f"{processed_dir}/processed/{self.dataset}/{self.prot_mode}/ankh"
+        self.data_dir2 = f"{processed_dir}/processed/{self.dataset}/{self.prot_mode}/esm1b"
+        self.data_dir3 = f"{processed_dir}/processed/{self.dataset}/{self.prot_mode}/prottrans"
 
         self.__dict__.update(**kwargs)
         self.load_ids()
@@ -91,7 +93,7 @@ class BaseDataset(Dataset):
         data2 = target_dict2['prot']
         data3 = target_dict3['prot']
 
-        if "pdbbind" in class_name:
+        if "pdbbind" in class_name or "reacbio" in class_name:
             if lig_id not in target_dict:
                 return None
 
@@ -143,3 +145,23 @@ class PDBBindDataset(BaseDataset):
         self.ids = list(zip(*(self.ids, lig_ids)))
 
 
+class EnzymeDataset(BaseDataset):
+
+    def load_ids(self):
+        with open(f"{self.raw_dir}/metadata/base_split.json", "r") as f:
+            splits = json.load(f)
+        self.ids = splits[self.mode]
+
+        with open(f"{self.raw_dir}/metadata/function_labels.json", "r") as f:
+            self.labels_all = json.load(f)
+
+        with open(f"{self.raw_dir}/metadata/labels_to_idx.json", "r") as f:
+            self.labels_to_idx = json.load(f)
+
+        self.idx_to_labels = {idx: label for label, idx in self.labels_to_idx.items()}
+
+    def add_or_update_target(self, data, idx):
+        pdb_id = self.ids[idx]
+        y = self.labels_to_idx[self.labels_all[pdb_id]]
+        data.y = torch.tensor([y]).long()
+        return data

@@ -1,3 +1,4 @@
-from hmrlba_code.data.datasets import PDBBindDataset
+from hmrlba_code.data.datasets import PDBBindDataset, EnzymeDataset
 
-DATASETS = {'pdbbind': PDBBindDataset}
+DATASETS = {'pdbbind': PDBBindDataset,
+            'enzyme': EnzymeDataset}

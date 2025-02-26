@@ -83,9 +83,9 @@ export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
 
 Download the datasets from the following links:
 
-- ​		/Datasets/Raw_data:  https://doi.org/10.6084/m9.figshare.27644664.v1  or  https://zenodo.org/records/1406199
+- ​		**pdbbind** : /Datasets/Raw_data:  https://doi.org/10.6084/m9.figshare.27644664.v1  or  https://zenodo.org/records/14061991
 
-
+- ​	    **enzyme** :
 
 ## 4. PLMs
 

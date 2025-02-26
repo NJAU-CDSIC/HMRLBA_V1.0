@@ -179,3 +179,11 @@ class PDBBind(DataHandler):
         with open(os.path.join(self.base_dir, "metadata/lig_smiles.json"), "r") as f:
             self.lig_smiles = json.load(f)
         self.pdb_ids = list(self.affinity_dict.keys())
+
+
+class Enzyme(DataHandler):
+
+    def load_ids(self):
+        with open(f"{self.base_dir}/metadata/function_labels.json", "r") as f:
+            labels_dict = json.load(f)
+        self.pdb_ids = list(labels_dict.keys())

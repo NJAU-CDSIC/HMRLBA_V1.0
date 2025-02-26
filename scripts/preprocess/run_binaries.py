@@ -30,6 +30,10 @@ def load_ids(args: argparse.Namespace) -> List[str]:
             affinity_dict = json.load(f)
             pdb_ids = list(affinity_dict.keys())
 
+    elif args.dataset == "enzyme":
+        base_dir = f"{args.data_dir}/raw/enzyme"
+        pdb_ids = os.listdir(f"{base_dir}/pdb_files/")
+
     else:
         raise ValueError()
 
