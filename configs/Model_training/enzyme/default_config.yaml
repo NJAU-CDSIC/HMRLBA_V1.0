@@ -3,19 +3,19 @@ split:
 dataset:
     value: enzyme
 prot_mode:
-    value: patch2backbone
+    value: surface2backbone
 encoder:
-    value: wln
+    value: wlnatt
 hsize:
     value: 512
 bhsize:
-    value: 150
+    value: 200
 shsize:
-    value: 150
+    value: 200
 bdepth:
     value: 5
 sdepth:
-    value: 4
+    value: 5
 n_classes:
     value: 384
 dropout_mlp:
@@ -27,7 +27,7 @@ lr:
 clip_norm:
     value: 10.0
 epochs:
-    value: 300
+    value: 100
 num_workers:
     value: 6
 batch_size:

@@ -83,9 +83,9 @@ export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
 
 Download the datasets from the following links:
 
-- ​		**pdbbind** : /Datasets/Raw_data:  https://doi.org/10.6084/m9.figshare.27644664.v1  or  https://zenodo.org/records/14061991
+-  /Datasets/Raw_data:  https://zenodo.org/records/14061991
 
-- ​	    **enzyme** :
+  
 
 ## 4. PLMs
 
@@ -153,6 +153,23 @@ python scripts/eval/eval_model.py --exp_name run-20241124_204606-r94ymd7y
 The exp_name **run-20241124_204606-r94ymd7y** is a model that has been trained on identity30 dataset.
 
 If you want to test your trained model, change exp_name to the name of the model training result folder in `/Experiments/wandb/...`
+
+
+
+## Enzyme Classification
+
+Similar to the binding affinity prediction task.
+
+```
+python -W ignore scripts/preprocess/run_binaries.py --dataset enzyme --tasks all
+
+python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mode surface2backbone --plm esm1b
+python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mode surface2backbone --plm ankh
+python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mode surface2backbone --plm prottrans
+
+python scripts/train/run_model.py --config_file configs/Model_training/enzyme/default_config.yaml
+
+```
 
 
 
