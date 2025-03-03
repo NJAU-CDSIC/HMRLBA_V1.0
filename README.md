@@ -137,7 +137,7 @@ wandb.init(project='HMRLBA', dir=args.out_dir,
            config=args.config_file)
 ```
 
-The experiment config files are organized as `configs/Model_training/pdbbind/SPLIT.yaml` where `SPLIT` is one of `{identity30, identity60, scaffold}`.
+The experiment config files are organized as `configs/Model_training/pdbbind/SPLIT.yaml` where `SPLIT` is one of `{identity30, identity60, scaffold, casf}`.
 
 - Training model, taking identity30 dataset as an example:
 
