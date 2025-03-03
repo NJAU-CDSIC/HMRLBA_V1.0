@@ -16,7 +16,7 @@ from hmrlba_code.data.base import ComplexData
 from hmrlba_code.utils.tensor import build_mlp
 
 
-class AffinityPred(nn.Module):
+class HMRLBA(nn.Module):
     """Model to predict the binding affinity between ligand and protein."""
 
     def __init__(self,
@@ -38,7 +38,7 @@ class AffinityPred(nn.Module):
         device: str,
             Device to run the model on.
         """
-        super(AffinityPred, self).__init__(**kwargs)
+        super(HMRLBA, self).__init__(**kwargs)
         self.config = config
         self.toggles = toggles if toggles is not None else {}
         self.metrics = metrics

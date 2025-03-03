@@ -10,7 +10,7 @@ from hmrlba_code.layers import ProtMPN
 from hmrlba_code.utils.tensor import build_mlp
 
 
-class ProtClassifier(nn.Module):
+class HMRLBA_EC(nn.Module):
 
     def __init__(self,
                  config: Dict,
@@ -18,7 +18,7 @@ class ProtClassifier(nn.Module):
                  metrics: Dict = None,
                  class_weights = None,
                  device: str = 'cpu', **kwargs):
-        super(ProtClassifier, self).__init__(**kwargs)
+        super(HMRLBA_EC, self).__init__(**kwargs)
         self.config = config
         self.toggles = toggles if toggles is not None else {}
         self.metrics = metrics

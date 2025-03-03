@@ -3,16 +3,16 @@ Functions that take in command line arguments and build the model.
 """
 import json
 import numpy as np
-from hmrlba_code.models.affinity_pred import AffinityPred
+from hmrlba_code.models.HMRLBA import HMRLBA
 from hmrlba_code.feat import (AMINO_ACIDS, SECONDARY_STRUCTS, ATOM_FDIM,
                               BOND_FDIM, CONTACT_FDIM, SURFACE_NODE_FDIM, SURFACE_EDGE_FDIM,
                               PATCH_NODE_FDIM, PATCH_EDGE_FDIM)
-from hmrlba_code.models.prot_classifier import ProtClassifier
+from hmrlba_code.models.HMRLBA_EC import HMRLBA_EC
 from hmrlba_code.utils.metrics import EVAL_METRICS, DATASET_METRICS, METRICS
 
 MODEL_CLASSES = {
-    'pdbbind': AffinityPred,
-    'enzyme': ProtClassifier
+    'pdbbind': HMRLBA,
+    'enzyme': HMRLBA_EC
 }
 
 
