@@ -11,13 +11,13 @@ hsize:
 bhsize:
     value: 200
 shsize:
-    value: 150
+    value: 200
 bdepth:
     value: 5
 sdepth:
     value: 5
 lig_hsize:
-    value: 300
+    value: 200
 lig_depth:
     value: 5
 dropout_mlp:
