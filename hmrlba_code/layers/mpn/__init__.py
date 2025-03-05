@@ -1,6 +1,6 @@
-from hmrlba_code.layers.mpn.wln import WLNConv, WLNResConv, WLNConvAtt
+from hmrlba_code.layers.mpn.wln import WLNConv, WLNConvAtt
 
-WLNs = {'wln': WLNConv, 'wlnres': WLNResConv, 'wlnatt': WLNConvAtt}
+WLNs = {'wln': WLNConv, 'wlnatt': WLNConvAtt}
 
 
 def mpn_layer_from_config(config, encoder):

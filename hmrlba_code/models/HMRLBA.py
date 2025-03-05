@@ -10,7 +10,7 @@ import copy
 from torch_geometric.nn import global_add_pool, global_mean_pool
 import gc
 
-from hmrlba_code.layers import WLNConv, WLNResConv, ProtMPN
+from hmrlba_code.layers import WLNConv, ProtMPN
 from hmrlba_code.layers.mpn import WLNConvAtt
 from hmrlba_code.data.base import ComplexData
 from hmrlba_code.utils.tensor import build_mlp
@@ -149,7 +149,7 @@ class HMRLBA(nn.Module):
                                     use_mpn_in_patch=self.toggles.get("use_mpn_in_patch", False))
 
         if 'wln' in config['encoder']:
-            WLN_ENCODERS = {'wln': WLNConv, 'wlnres': WLNResConv, 'wlnatt': WLNConvAtt}
+            WLN_ENCODERS = {'wln': WLNConv, 'wlnatt': WLNConvAtt}
             wln_class = WLN_ENCODERS.get(config['encoder'])
             self.lig_mpn = wln_class(node_fdim=config['atom_fdim'],
                                      edge_fdim=config['bond_fdim'],
