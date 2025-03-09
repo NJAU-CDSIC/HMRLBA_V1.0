@@ -36,12 +36,14 @@ The folders in the HMRLBA repository:
 
   ​	IEConv: https://github.com/phermosilla/IEConv_proteins
 
+  ​	RF-score: https://github.com/guaguabujianle/GIGN/tree/main/RF-Score
+
   ​	PSICHIC: https://github.com/huankoh/PSICHIC
 
   ​	HoloProt: https://github.com/vsomnath/holoprot
 
   ​	MaSIF: https://github.com/LPDI-EPFL/masif
-
+  
   ​	HaPPy: https://github.com/Jthy-af/HaPPy
 
 ---
