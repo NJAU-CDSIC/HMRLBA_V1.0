@@ -87,7 +87,7 @@ export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
 
 Download the datasets from the following links:
 
--  /Datasets/Raw_data:  https://zenodo.org/records/15005823
+-  /Datasets/Raw_data:  https://zenodo.org/records/15005823 or https://doi.org/10.6084/m9.figshare.27644664
 
   
 
