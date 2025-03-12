@@ -10,7 +10,7 @@ The folders in the HMRLBA repository:
 
 - **Datasets**: 
 
-  a. **Raw_data**: Three PDBbind v2019 benchmark  dataset and Enzyme classification dataset.
+  a. **Raw_data**: Three PDBbind v2019 benchmark  datasets and Enzyme classification dataset.
 
   b. **Hard_samples**: 21 hard samples.
 
@@ -24,9 +24,9 @@ The folders in the HMRLBA repository:
 
 - **scripts**: Scripts for data preprocessing, graph generation, model training and testing.
 
-- **Experiments:** Model training result save file.
+- **Experiments:** Store model training results.
 
-- **Supplementary Files**: The detailed results for our HMRLBA manuscript.
+- **Supplementary Files**: The detailed results for all the analysis in our study.
 
 - **SOTA**: Comparative methods used in the contrast experiments:
 
@@ -176,5 +176,4 @@ python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mo
 # Training model
 python scripts/train/run_model.py --config_file configs/Model_training/enzyme/default_config.yaml
 ```
-
 
