@@ -160,40 +160,21 @@ If you want to test your trained model, change exp_name to the name of the model
 
 
 
-## Enzyme Classification
+## Enzyme Classification Experiment
 
 Similar to the binding affinity prediction task.
 
 ```
+# Data Preprocessing
 python -W ignore scripts/preprocess/run_binaries.py --dataset enzyme --tasks all
 
+# Graph Generation
 python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mode surface2backbone --plm esm1b
 python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mode surface2backbone --plm ankh
 python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mode surface2backbone --plm prottrans
 
+# Training model
 python scripts/train/run_model.py --config_file configs/Model_training/enzyme/default_config.yaml
-
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
