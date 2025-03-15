@@ -10,11 +10,11 @@ The folders in the HMRLBA repository:
 
 - **Datasets**: 
 
-  a. **Raw_data**: Three PDBbind v2019 benchmark  datasets and Enzyme classification dataset.
+  a. **Raw_data**: Three PDBbind v2019 benchmark  datasets, CASF-2016 dataset from PDBbind v2016, filtered dataset from BindingDB and Enzyme classification dataset.
 
   b. **Hard_samples**: 21 hard samples.
 
-  c. **Virtual screening**: SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors.
+  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The protein split list of BindingDB dataset, with the seven Dot1L samples correspond to pdb_id 1NW3 in the test set.
 
   d. **PDB_id_list**: The protein list of different dataset split.
 
