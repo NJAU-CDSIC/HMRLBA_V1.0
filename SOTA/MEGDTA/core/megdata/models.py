@@ -667,7 +667,7 @@ class GraphModel(torch.nn.Module):
                 self.pool_gmf = GraphPool(trial, prefix=prefix+"_gmf")
                 _n_out += self.gmf.n_out * self.pool_gmf.coef
 
-        if self._use_post_fc:        # 如果 _use_post_fc 为 True
+        if self._use_post_fc:
             self._post_fc = FCLayers(trial, prefix+"_post", _n_out, layers_range=(1, 1),
                                      n_units_list=(1024, 256, 512,  2048))
             _n_out = self._post_fc.n_out

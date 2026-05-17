@@ -79,13 +79,5 @@ python tasks/pdbbind_training/casf_tools.py evaluate \
   --output_dir results_casf_extended_final
 ```
 
-CASF supplementary data preparation:
-
-```text
-preprocess_supplement_and_test.py
-prepare_casf_data.py --merge_supplement
-casf_tools.py
-```
-
 Generated checkpoints, logs, prediction CSVs, and metrics files are local
 artifacts and should not be committed.

@@ -23,14 +23,4 @@ python tasks/pdbbind_preprocessing/preprocess_pdbbind.py \
   --split identity60
 ```
 
-For a generic CSV dataset, use:
-
-```bash
-PYTHONPATH=core/megdata:core \
-python tasks/pdbbind_preprocessing/preprocess_data.py \
-  --input my_data.csv \
-  --output_dir data/mydataset \
-  --dataset_name mydataset
-```
-
 Generated files under `data/` are local artifacts and should not be committed.
