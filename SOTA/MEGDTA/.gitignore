@@ -1,0 +1,36 @@
+# Runtime data and generated benchmark artifacts
+data/
+results/
+results_*/
+models_identity30/
+checkpoints/
+outputs/
+log/
+
+# Model checkpoints and serialized data
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.pickle
+
+# Logs and generated metrics/predictions
+*.log
+training_pid.txt
+predictions_*.csv
+metrics_*.json
+cross_validation_summary*.csv
+fold_*_predictions*.csv
+all_folds_predictions*.csv
+
+# Python/runtime cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local environment files
+.env
+.venv/
+venv/
+env/
