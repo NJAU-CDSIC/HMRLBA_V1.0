@@ -22,5 +22,3 @@ python tasks/pdbbind_preprocessing/preprocess_pdbbind.py \
   --output_dir data/pdbbind_identity60 \
   --split identity60
 ```
-
-Generated files under `data/` are local artifacts and should not be committed.

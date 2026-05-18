@@ -78,6 +78,3 @@ python tasks/pdbbind_training/casf_tools.py evaluate \
   --model_dir results_casf_converted \
   --output_dir results_casf_extended_final
 ```
-
-Generated checkpoints, logs, prediction CSVs, and metrics files are local
-artifacts and should not be committed.
