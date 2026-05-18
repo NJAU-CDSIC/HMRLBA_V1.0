@@ -14,7 +14,7 @@ The folders in the HMRLBA repository:
 
   b. **Hard_samples**: 21 hard samples.
 
-  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). .
+  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). 3) DUD-E HXK4 target data for the external virtual screening benchmark.
 
   d. **PDB_id_list**: The protein list of different dataset split.
 
@@ -45,6 +45,8 @@ The folders in the HMRLBA repository:
   ​	MaSIF: https://github.com/LPDI-EPFL/masif
   
   ​	HaPPy: https://github.com/Jthy-af/HaPPy
+
+  ​	MEGDTA: https://github.com/liyijuncode/MEGDTA
 
 ---
 
@@ -88,6 +90,12 @@ export PYTHONPATH="${PYTHONPATH}:/mnt/disk/hzy/HMRLBA"
 Download the datasets from the following links:
 
 -  /Datasets/Raw_data:  https://zenodo.org/records/15005823 or https://doi.org/10.6084/m9.figshare.27644664
+
+-  /Datasets/Virtual screening/DUD-E:  https://dude.docking.org/db/subsets/all/all.tar.gz
+
+The DUD-E full dataset contains 102 targets. In this repository branch, only
+the HXK4 target is included and used for the virtual screening benchmark
+experiment.
 
   
 
@@ -160,6 +168,60 @@ If you want to test your trained model, change exp_name to the name of the model
 
 
 
+## DUD-E HXK4 Virtual Screening Experiment
+
+DUD-E is added as an external benchmark dataset for virtual screening. The full
+DUD-E dataset can be downloaded from:
+
+```
+https://dude.docking.org/db/subsets/all/all.tar.gz
+```
+
+In this repository branch, only the HXK4 target is included and used as the
+experimental target. The original HXK4 files are stored in
+`Datasets/Virtual screening/DUD-E/hxk4`, and the HMRLBA formatted raw data are
+stored in `Datasets/Raw_data/dude_hxk4`. The corresponding preprocessing and
+evaluation scripts are provided in `scripts/preprocess` and `scripts/eval`.
+
+
+
+## Ablation Experiment
+
+The cascade ablation scripts are stored in:
+
+```
+scripts/train/ablation
+```
+
+For the cascade ablation on DUD-E HXK4:
+
+```
+bash scripts/train/ablation/run_cascade_ablation_eval_hxk4.sh
+```
+
+For PDBbind training/evaluation splits, use the ablation entry scripts directly:
+
+```
+python scripts/train/ablation/run_cascade_ablation.py --config-file configs/Model_training/pdbbind/identity30.yaml
+python scripts/train/ablation/run_cnnseq_concat_ablation.py --config-file configs/Model_training/pdbbind/identity30.yaml
+```
+
+
+
+## MEGDTA SOTA Benchmark
+
+The MEGDTA benchmark workflow is organized in `/SOTA/MEGDTA`, based on the
+original MEGDTA repository:
+
+```
+https://github.com/liyijuncode/MEGDTA
+```
+
+The detailed preprocessing, training and HXK4 prediction commands are provided
+in `/SOTA/MEGDTA/README.md`.
+
+
+
 ## Enzyme Classification Experiment
 
 Similar to the binding affinity prediction task.
@@ -176,4 +238,3 @@ python -W ignore scripts/preprocess/prepare_graphs.py --dataset enzyme --prot_mo
 # Training model
 python scripts/train/run_model.py --config_file configs/Model_training/enzyme/default_config.yaml
 ```
-
