@@ -244,64 +244,15 @@ python scripts/train/ablation/run_cnnseq_concat_ablation.py --config-file config
 
 ## MEGDTA SOTA Benchmark
 
-The original MEGDTA repository is available at:
+The MEGDTA benchmark workflow is organized in `/SOTA/MEGDTA`, based on the
+original MEGDTA repository:
 
 ```
 https://github.com/liyijuncode/MEGDTA
 ```
 
-The MEGDTA benchmark workflow is organized in:
-
-```
-SOTA/MEGDTA
-```
-
-It contains the preprocessing, training and HXK4 prediction scripts used for
-the MEGDTA comparative experiment.
-
-PDBbind preprocessing example:
-
-```
-cd SOTA/MEGDTA
-PYTHONPATH=core/megdata:core \
-python tasks/pdbbind_preprocessing/preprocess_pdbbind.py \
-  --pdbbind_dir data/HMRLBA_Datasets/Raw_data/pdbbind \
-  --output_dir data/pdbbind_identity30 \
-  --split identity30
-```
-
-PDBbind training example:
-
-```
-cd SOTA/MEGDTA
-PYTHONPATH=core/megdata:core \
-python tasks/pdbbind_training/train_pdbbind_identity.py \
-  --split identity30 \
-  --epochs 800 \
-  --fold 0 \
-  --save_dir models_identity30 \
-  --gpu 0
-```
-
-HXK4 prediction example:
-
-```
-cd SOTA/MEGDTA
-PYTHONPATH=core/megdata:core \
-python tasks/hxk4_prediction/preprocess_hxk4.py \
-  --data_dir data/hxk4_raw \
-  --output_dir data/hxk4
-
-PYTHONPATH=core/megdata:core \
-python tasks/hxk4_prediction/predict_hxk4.py \
-  --dataset hxk4 \
-  --model models_identity30/best_model_fold0.pth \
-  --fold 0 \
-  --gpu 0
-```
-
-Generated checkpoints, logs, predictions and metric files are local artifacts
-and should not be committed.
+The detailed preprocessing, training and HXK4 prediction commands are provided
+in `/SOTA/MEGDTA/README.md`.
 
 
 
