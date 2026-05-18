@@ -14,7 +14,7 @@ The folders in the HMRLBA repository:
 
   b. **Hard_samples**: 21 hard samples.
 
-  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). .
+  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). 3) DUD-E HXK4 target data for the external virtual screening benchmark.
 
   d. **PDB_id_list**: The protein list of different dataset split.
 
@@ -91,6 +91,12 @@ Download the datasets from the following links:
 
 -  /Datasets/Raw_data:  https://zenodo.org/records/15005823 or https://doi.org/10.6084/m9.figshare.27644664
 
+-  /Datasets/Virtual screening/DUD-E:  https://dude.docking.org/db/subsets/all/all.tar.gz
+
+The DUD-E full dataset contains 102 targets. In this repository branch, only
+the HXK4 target is included and used for the virtual screening benchmark
+experiment.
+
   
 
 ## 4. PLMs
@@ -165,6 +171,15 @@ If you want to test your trained model, change exp_name to the name of the model
 ## DUD-E HXK4 Virtual Screening Experiment
 
 DUD-E HXK4 is added as an external benchmark dataset for virtual screening.
+The full DUD-E dataset can be downloaded from:
+
+```
+https://dude.docking.org/db/subsets/all/all.tar.gz
+```
+
+In this repository branch, only the HXK4 target is included and used as the
+experimental target.
+
 The original DUD-E files are stored in:
 
 ```
