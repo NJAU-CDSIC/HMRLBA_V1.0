@@ -170,52 +170,18 @@ If you want to test your trained model, change exp_name to the name of the model
 
 ## DUD-E HXK4 Virtual Screening Experiment
 
-DUD-E HXK4 is added as an external benchmark dataset for virtual screening.
-The full DUD-E dataset can be downloaded from:
+DUD-E is added as an external benchmark dataset for virtual screening. The full
+DUD-E dataset can be downloaded from:
 
 ```
 https://dude.docking.org/db/subsets/all/all.tar.gz
 ```
 
 In this repository branch, only the HXK4 target is included and used as the
-experimental target.
-
-The original DUD-E files are stored in:
-
-```
-Datasets/Virtual screening/DUD-E/hxk4
-```
-
-The HMRLBA formatted raw data are stored in:
-
-```
-Datasets/Raw_data/dude_hxk4
-```
-
-To regenerate the HMRLBA raw data for HXK4:
-
-```
-python scripts/preprocess/prepare_dude_target.py \
-  --target-dir "Datasets/Virtual screening/DUD-E/hxk4" \
-  --out-root Datasets/Raw_data
-```
-
-Then calculate protein secondary structure, generate protein surface mesh and
-prepare graph data:
-
-```
-bash scripts/preprocess/run_dude_hxk4_preprocess.sh
-```
-
-Testing a trained HMRLBA model on DUD-E HXK4:
-
-```
-bash scripts/eval/run_dude_hxk4_eval.sh
-```
-
-The generated metrics and predictions are stored under `results/` when users
-rerun the scripts. The precomputed result files are not included in this
-repository branch.
+experimental target. The original HXK4 files are stored in
+`Datasets/Virtual screening/DUD-E/hxk4`, and the HMRLBA formatted raw data are
+stored in `Datasets/Raw_data/dude_hxk4`. The corresponding preprocessing and
+evaluation scripts are provided in `scripts/preprocess` and `scripts/eval`.
 
 
 
