@@ -46,7 +46,7 @@ The folders in the HMRLBA repository:
   
   ​	HaPPy: https://github.com/Jthy-af/HaPPy
 
-  ​	MEGDTA: Comparative SOTA benchmark workflow in `/SOTA/MEGDTA`.
+  ​	MEGDTA: https://github.com/liyijuncode/MEGDTA
 
 ---
 
@@ -243,6 +243,12 @@ python scripts/train/ablation/run_cnnseq_concat_ablation.py --config-file config
 
 
 ## MEGDTA SOTA Benchmark
+
+The original MEGDTA repository is available at:
+
+```
+https://github.com/liyijuncode/MEGDTA
+```
 
 The MEGDTA benchmark workflow is organized in:
 
