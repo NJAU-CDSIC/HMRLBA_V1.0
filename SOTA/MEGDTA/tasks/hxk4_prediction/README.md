@@ -22,6 +22,3 @@ python tasks/hxk4_prediction/predict_hxk4.py \
   --fold 0 \
   --gpu 0
 ```
-
-Generated HXK4 predictions and metrics are local artifacts and should not be
-committed.

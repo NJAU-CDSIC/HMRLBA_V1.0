@@ -9,9 +9,6 @@ HMRLBA_V1.0/
     └── MEGDTA/
 ```
 
-Only reusable code and documentation are included. Raw data, processed data,
-model checkpoints, logs, predictions, and metric outputs are excluded.
-
 ## Structure
 
 ```text
@@ -124,17 +121,3 @@ python tasks/hxk4_prediction/predict_hxk4.py \
   --fold 0 \
   --gpu 0
 ```
-
-## Do Not Commit Generated Files
-
-The `.gitignore` excludes generated artifacts such as:
-
-- `data/`
-- `results/` and `results_*/`
-- `models_identity30/`
-- `*.pth`, `*.pkl`, `*.log`
-- `predictions_*.csv`, `metrics_*.json`
-- `__pycache__/`
-
-This keeps the uploaded SOTA package focused on reproducible code instead of
-machine-specific outputs.
