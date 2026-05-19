@@ -554,9 +554,12 @@ def run_train(args, rt, device):
     if not args.wandb_online:
         os.environ.setdefault("WANDB_MODE", "offline")
 
-    for seed in args.seeds:
+    if not args.seeds:
+        raise ValueError("--seeds is required in train mode.")
+
+    for seed_index, seed in enumerate(args.seeds, start=1):
         seed_everything(seed, torch, rt["np"])
-        run_name = "cnnseq_concat_seed{}".format(seed)
+        run_name = "cnnseq_concat_repeat{}".format(seed_index)
         print("\n[train] {}".format(run_name), flush=True)
         run_config = dict(config)
         run_config["seed"] = seed
@@ -672,7 +675,8 @@ def parse_args():
     parser.add_argument("--out-dir", default="/data/HMRLBA_cnnseq_concat_runs")
     parser.add_argument("--config-file",
                         default="/root/HMRLBA_V1.0/configs/Model_training/pdbbind/identity30.yaml")
-    parser.add_argument("--seeds", nargs="+", type=int, default=[2024, 2025, 2026, 2027, 2028])
+    parser.add_argument("--seeds", nargs="+", type=int, default=None,
+                        help="Random seeds for repeated runs.")
     parser.add_argument("--num-workers", type=int, default=0)
     parser.add_argument("--graph-source", default=None,
                         help="Directory containing one set of cached .pth graphs; PLM features are ignored.")

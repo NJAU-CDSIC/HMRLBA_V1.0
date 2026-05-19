@@ -10,6 +10,7 @@ Optional extended workflow:
 """
 
 import argparse
+import os
 import pickle
 import shutil
 from pathlib import Path
@@ -19,7 +20,7 @@ import pandas as pd
 from sklearn.model_selection import KFold
 
 
-SEED = 42
+SEED = int(os.environ.get("MEGDTA_SEED", "0"))
 
 
 def write_indices(path, indices):
