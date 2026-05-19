@@ -353,10 +353,13 @@ def run_train(args, rt, device):
     if not args.wandb_online:
         os.environ.setdefault("WANDB_MODE", "offline")
 
-    for seed in args.seeds:
+    if not args.seeds:
+        raise ValueError("--seeds is required in train mode.")
+
+    for seed_index, seed in enumerate(args.seeds, start=1):
         seed_everything(seed, torch)
         for variant in args.variants:
-            run_name = "cascade_{}_seed{}".format(variant, seed)
+            run_name = "cascade_{}_repeat{}".format(variant, seed_index)
             print("\n[train] {} keep={}".format(run_name, ",".join(VARIANT_KEEP[variant]) or "none"), flush=True)
 
             run_config = dict(config)
@@ -418,7 +421,8 @@ def parse_args():
     parser.add_argument("--config-file",
                         default="/root/HMRLBA_V1.0/configs/Model_training/pdbbind/identity30.yaml",
                         help="Training config YAML, used by --mode train.")
-    parser.add_argument("--seeds", nargs="+", type=int, default=[2024, 2025, 2026, 2027, 2028])
+    parser.add_argument("--seeds", nargs="+", type=int, default=None,
+                        help="Random seeds for repeated runs.")
     parser.add_argument("--wandb-project", default="HMRLBA-cascade-ablation")
     parser.add_argument("--wandb-entity", default="hzy-team")
     parser.add_argument("--wandb-online", action="store_true")

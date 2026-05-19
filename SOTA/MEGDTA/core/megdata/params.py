@@ -1,3 +1,5 @@
+import os
+
 import torch
 
 N_CHEM_NODE_FEAT = 22
@@ -6,7 +8,7 @@ N_CHEM_EDGE_FEAT = 12
 N_PROT_EDGE_FEAT = 7
 N_CHEM_ECFP = 2048
 
-SEED = 47
+SEED = int(os.environ.get("MEGDTA_SEED", "0"))
 
 if torch.cuda.is_available():
     DEVICE = torch.device("cuda")
