@@ -135,7 +135,7 @@ The graph data is stored in： `./Datasets/processed/pdbbind/surface2backbone/..
 
 ## 7.  Training and Testing
 
-We use wandb to track out experiments. Please make sure to have the [setup](https://docs.wandb.ai/quickstart) complete before doing that.
+We use wandb to track our experiments. Please make sure to have the [setup](https://docs.wandb.ai/quickstart) complete before doing that.
 
 Modify the following content in `scripts/train/run_model.py` and set it to your wandb account:
 
