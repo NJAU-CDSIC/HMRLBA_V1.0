@@ -26,8 +26,6 @@ The folders in the HMRLBA repository:
 
 - **Experiments:** Store model training results.
 
-- **Supplementary Files**: The detailed results for all the analysis in our study.
-
 - **SOTA**: Comparative methods used in the contrast experiments:
 
   ​	DeepDTA: https://github.com/hkmztrk/DeepDTA
