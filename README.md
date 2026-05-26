@@ -24,7 +24,7 @@ The folders in the HMRLBA repository:
 
 - **scripts**: Scripts for data preprocessing, graph generation, model training and testing.
 
-- **Experiments:** Store released model checkpoints and model training results. The released identity30 model checkpoint is `Experiments/wandb/run-20241124_204606-r94ymd7y/files/best_ckpt.pt`, which contains the learned weight parameters; `config.yaml` in the same folder stores the corresponding model/training configuration.**Experiments:** Store model training results.
+- **Experiments:** Store released model checkpoints and model training results. The released identity30 model checkpoint is `Experiments/wandb/run-20241124_204606-r94ymd7y/files/best_ckpt.pt`, which contains the learned weight parameters; `config.yaml` in the same folder stores the corresponding model/training configuration.
 
 - **SOTA**: Comparative methods used in the contrast experiments:
 
