@@ -174,6 +174,7 @@ Experiments/wandb/run-20241124_204606-r94ymd7y/files/config.yaml
 ```
 
 best_ckpt.pt: the trained model checkpoint. The learned HMRLBA weight parameters are stored in the state field of this checkpoint and are loaded by model.load_state_dict(...) during evaluation.
+
 config.yaml: the configuration file used to reconstruct and evaluate the trained model, including the dataset, split, protein representation mode, and other training/evaluation settings.
 
 
