@@ -160,9 +160,25 @@ python scripts/train/run_model.py --config_file configs/Model_training/pdbbind/i
 python scripts/eval/eval_model.py --exp_name run-20241124_204606-r94ymd7y
 ```
 
-The exp_name **run-20241124_204606-r94ymd7y** is a model that has been trained on identity30 dataset.
+The released trained HMRLBA model used for testing is stored under the `Experiments` folder. For example, the model trained on the PDBbind identity30 split is:
 
-If you want to test your trained model, change exp_name to the name of the model training result folder in `/Experiments/wandb/...`
+```text
+Experiments/wandb/run-20241124_204606-r94ymd7y/
+
+The key files for this released trained model are:
+
+Experiments/wandb/run-20241124_204606-r94ymd7y/files/best_ckpt.pt
+Experiments/wandb/run-20241124_204606-r94ymd7y/files/config.yaml
+best_ckpt.pt: the trained model checkpoint. The learned HMRLBA weight parameters are stored in the state field of this checkpoint and are loaded by model.load_state_dict(...) during evaluation.
+config.yaml: the configuration file used to reconstruct and evaluate the trained model, including the dataset, split, protein representation mode, and other training/evaluation settings.
+
+To evaluate the released trained model, run:
+
+python scripts/eval/eval_model.py --exp_name run-20241124_204606-r94ymd7y
+
+If you want to test your own trained model, change --exp_name to the name of your model training result folder under Experiments/wandb/.
+
+
 
 
 
