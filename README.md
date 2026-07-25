@@ -219,8 +219,7 @@ original MEGDTA repository:
 https://github.com/liyijuncode/MEGDTA
 ```
 
-The detailed preprocessing, training and HXK4 prediction commands are provided
-in `/SOTA/MEGDTA/README.md`.
+
 
 
 
