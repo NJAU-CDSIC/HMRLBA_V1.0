@@ -1,0 +1,10 @@
+MUV dataset
+
+File:
+- muv.csv.gz
+
+Source:
+- https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/muv.csv.gz
+
+Reference:
+- Rohrer SG, Baumann K. Maximum unbiased validation (MUV) data sets for virtual screening based on PubChem bioactivity data. J Chem Inf Model. 2009.

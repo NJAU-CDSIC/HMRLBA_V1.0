@@ -1,0 +1,9 @@
+{
+  "filter_policy": "remove identity30 exact pair overlaps from split=train and split=valid; test overlaps retained",
+  "original_metz_pairs": 35259,
+  "identity30_overlap_pdb_rows_removed": 9,
+  "unique_metz_pairs_removed": 8,
+  "filtered_metz_pairs": 35251,
+  "test_overlap_retained": true,
+  "output_dir": "Datasets\\leakage_audit\\metz_vs_identity30\\filtered_remove_identity30_train_valid"
+}

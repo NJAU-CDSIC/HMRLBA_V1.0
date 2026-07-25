@@ -1,0 +1,39 @@
+{
+  "input_file": "Datasets\\Virtual screening\\MUV\\muv.csv.gz",
+  "target_mapping_file": "Datasets\\structure_audit\\muv_pubchem_targets.csv",
+  "strict_selected_tasks": [
+    "MUV-548",
+    "MUV-644",
+    "MUV-810",
+    "MUV-832",
+    "MUV-846",
+    "MUV-852"
+  ],
+  "strict_samples": 88030,
+  "strict_actives": 177,
+  "strict_inactives": 87853,
+  "with_caution_selected_tasks": [
+    "MUV-548",
+    "MUV-644",
+    "MUV-652",
+    "MUV-689",
+    "MUV-810",
+    "MUV-832",
+    "MUV-846",
+    "MUV-852"
+  ],
+  "with_caution_samples": 117533,
+  "with_caution_actives": 235,
+  "with_caution_inactives": 117298,
+  "excluded_tasks": [
+    "MUV-466",
+    "MUV-600",
+    "MUV-692",
+    "MUV-712",
+    "MUV-713",
+    "MUV-733",
+    "MUV-737",
+    "MUV-858",
+    "MUV-859"
+  ]
+}
