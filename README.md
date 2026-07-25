@@ -14,7 +14,7 @@ The folders in the HMRLBA repository:
 
   b. **Hard_samples**: 21 hard samples.
 
-  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). 3) DUD-E HXK4 target data for the external virtual screening benchmark.
+  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). 3) DUD-E HXK4 target data for the external virtual screening benchmark. 4) Metz and MUV are provided as additional external benchmark datasets.
 
   d. **PDB_id_list**: The protein list of different dataset split.
 
@@ -90,6 +90,10 @@ Download the datasets from the following links:
 -  /Datasets/Raw_data:  https://zenodo.org/records/15005823 or https://doi.org/10.6084/m9.figshare.27644664
 
 -  /Datasets/Virtual screening/DUD-E:  https://dude.docking.org/db/subsets/all/all.tar.gz
+
+-  /Datasets/Virtual screening/Metz_170_GPCNDTA: Metz kinase binding affinity dataset with 170 targets. The provided `metz_170_filtered.xlsx` file in `/Datasets/PDB_id_list` contains 35,251 testing protein-ligand pairs after removing exact pair overlaps with the PDBbind identity30 training and validation splits.
+
+-  /Datasets/Virtual screening/MUV: MUV virtual screening dataset. The provided `muv_17.xlsx` file in `/Datasets/PDB_id_list` contains 249,886 labeled testing records from all 17 MUV assay tasks.
 
 The DUD-E full dataset contains 102 targets. In this repository branch, only
 the HXK4 target is included and used for the virtual screening benchmark
