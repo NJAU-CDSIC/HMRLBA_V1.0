@@ -1,9 +1,0 @@
-task,decision,gene,uniprot,rcsb_total,rcsb_top5,alphafold_available,alphafold_pdb_url,chosen_structure_auto,chosen_structure_type_auto,notes
-MUV-548,keep,PRKACA,P17612,54,4WB8;3OVV;3POO;4WB5;6QJ7,True,https://alphafold.ebi.ac.uk/files/AF-P17612-F1-model_v6.pdb,4WB8,experimental_pdb,
-MUV-644,keep,ROCK2,O75116,23,8X92;7JNT;7JOV;8X8X;9EP8,True,https://alphafold.ebi.ac.uk/files/AF-O75116-F1-model_v6.pdb,8X92,experimental_pdb,
-MUV-652,cautious_keep,pol,P04585,277,6DV4;6DIF;6DV0;5DGU;6E9A,True,https://alphafold.ebi.ac.uk/files/AF-0000000365763112-model_v1.pdb,6DV4,experimental_pdb,
-MUV-689,cautious_keep,Epha4,Q03137,5,2Y6O;2Y6M;1B0X;2XYU;2HEL,True,https://alphafold.ebi.ac.uk/files/AF-Q03137-F1-model_v6.pdb,2Y6O,experimental_pdb,
-MUV-810,keep,PTK2,Q05397,40,6YOJ;6YT6;4I4E;1MP8;4EBV,True,https://alphafold.ebi.ac.uk/files/AF-Q05397-F1-model_v6.pdb,6YOJ,experimental_pdb,
-MUV-832,keep,CTSG,P08311,16,7H6G;6VTM;1CGH;8G25;8G24,True,https://alphafold.ebi.ac.uk/files/AF-P08311-F1-model_v6.pdb,7H6G,experimental_pdb,
-MUV-846,keep,F11,P03951,116,7MBO;6TS4;4CRG;8BO6;8BO7,True,https://alphafold.ebi.ac.uk/files/AF-P03951-F1-model_v6.pdb,7MBO,experimental_pdb,
-MUV-852,keep,F12,P00748,17,7PRJ;6X0T;4BDX;7PRK;6X0S,True,https://alphafold.ebi.ac.uk/files/AF-P00748-F1-model_v6.pdb,7PRJ,experimental_pdb,

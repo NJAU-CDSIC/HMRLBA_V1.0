@@ -1,2 +1,0 @@
-metz.zip	https://raw.githubusercontent.com/LiZhang30/GPCNDTA/main/data/metz.zip
-metz targ_info.xlsx	https://raw.githubusercontent.com/LiZhang30/GPCNDTA/main/data/metz%20targ_info.xlsx

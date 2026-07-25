@@ -91,9 +91,9 @@ Download the datasets from the following links:
 
 -  /Datasets/Virtual screening/DUD-E:  https://dude.docking.org/db/subsets/all/all.tar.gz
 
--  /Datasets/Metz/Metz_170_GPCNDTA: Metz kinase binding affinity dataset with 170 targets. The provided `metz_170_filtered.xlsx` file in `/Datasets/PDB_id_list` contains 35,251 testing protein-ligand pairs after removing exact pair overlaps with the PDBbind identity30 training and validation splits.
+-  /Datasets/Virtual screening/Metz_170_GPCNDTA: Metz kinase binding affinity dataset with 170 targets. The provided `metz_170_filtered.xlsx` file in `/Datasets/PDB_id_list` contains 35,251 testing protein-ligand pairs after removing exact pair overlaps with the PDBbind identity30 training and validation splits.
 
--  /Datasets/Virtual screening/MUV: MUV virtual screening dataset and result archive. The provided `muv_17.xlsx` file in `/Datasets/PDB_id_list` contains 249,886 labeled testing records from all 17 MUV assay tasks.
+-  /Datasets/Virtual screening/MUV: MUV virtual screening dataset. The provided `muv_17.xlsx` file in `/Datasets/PDB_id_list` contains 249,886 labeled testing records from all 17 MUV assay tasks.
 
 The DUD-E full dataset contains 102 targets. In this repository branch, only
 the HXK4 target is included and used for the virtual screening benchmark
