@@ -14,9 +14,11 @@ The folders in the HMRLBA repository:
 
   b. **Hard_samples**: 21 hard samples.
 
-  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). 3) Metz and MUV are provided as additional external benchmark datasets.
+  c. **Virtual screening**: 1). SMILES strings of 2616 FDA-approved drugs and 18 EGFR inhibitors. 2) The BindingDB dataset includes 69 testing samples. Among them, seven compounds specifically bind to the target protein Dot1L (pdb_id 1NW3). 3) MUV are provided as additional external benchmark datasets.
 
   d. **PDB_id_list**: The protein list of different dataset split.
+
+  e. **Metz**: Metz are provided as additional external benchmark datasets.
 
 - **hmrlba_code**: Main code file for the HMRLBA model.
 
